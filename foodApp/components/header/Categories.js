@@ -32,15 +32,17 @@ export default function Categories() {
 const styles = StyleSheet.create({
     categoryContainer: {
         flexDirection: 'row',
-        marginTop: 20,
-        marginBottom: 20,
+        marginTop: 15,
+        marginBottom: 15,
         justifyContent: "space-between",
+        height: 50,
 
     },
     categoryText: {
         fontSize: 16,
         color: 'grey',
         fontWeight: 'bold',
+
     },
     categoryTextSelected: {
         color: COLORS.white,
@@ -60,8 +62,19 @@ const styles = StyleSheet.create({
         marginHorizontal: 3,
         justifyContent: 'center',
         alignItems: 'center',
+        borderTopWidth: 3,
+        borderTopColor: '#f5f5f5',
         width: '100%',
-        height: 40
+        height: 40,
+        shadowOffset: {
+            width: 0,
+            height: 3,
+
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+
+        elevation: 7,
     }
 })
 

@@ -6,24 +6,26 @@ import { Ionicons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import Categories from './Categories';
+import { RegularText, MediumText } from '../Shared/StyledText';
+import BoldText from '../Shared/StyledText';
 
 
 // const { width, height } = Dimensions.get(window);
 
-const image = require('../../assets/blackboard.jpg')
+const image = require('../../assets/illustrate.jpg')
 
 export default function Header() {
 
     return (
         <View style={styles.container}>
-            <ImageBackground source={image} resizeMode="cover" style={{ height: '100%', marginHorizontal: 15, marginTop: 10 }} imageStyle={{ borderRadius: 10, alignItems: 'center' }}>
+            <ImageBackground source={image} resizeMode="cover" style={{ height: '100%' }} imageStyle={{ borderBottomLeftRadius: 15, borderBottomRightRadius: 15, alignItems: 'center' }}>
                 <View style={styles.top}>
-                    <View>
-                        {/* <TouchableOpacity>
-                            <Ionicons name="ios-location-outline" size={20} color={COLORS.white} />
-                        </TouchableOpacity> */}
-                        <Text style={styles.intro}>Hi Betrand <Text style={{ color: COLORS.secondary, fontWeight: 'bold', fontSize: 20 }}>!</Text></Text>
-                        <Text style={styles.welcome}>Welcome To Basement Plu<Text>s</Text></Text>
+                    <View style={{ paddingTop: 6 }}>
+                        <BoldText style={{
+                            color: 'white',
+                            fontSize: 18,
+                            fontWeight: '800'
+                        }}>The Basement Plus Restaurant</BoldText>
                     </View>
                     <View>
                         <TouchableOpacity>
@@ -45,9 +47,6 @@ export default function Header() {
 
             </ImageBackground>
 
-            {/* <View style={{ flex: 2, backgroundColor: 'red' }}><Text>Me</Text></View>
-            <View style={{ flex: 2, backgroundColor: 'blue' }}><Text>Me</Text></View>
-            <View style={{ flex: 2, backgroundColor: 'yellow' }}><Text>Me</Text></View> */}
         </View>
     )
 }
@@ -56,6 +55,7 @@ const styles = StyleSheet.create({
     container: {
         height: '25%',
         width: '100%',
+
 
     },
     intro: {
@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: -20,
         left: 10,
-        right: 10
+        right: 10,
+
     },
     searchContainerAnnex: {
         flexDirection: 'row',
@@ -97,6 +98,14 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 7,
         width: '90%',
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+
+        elevation: 7,
     },
     sort: {
         backgroundColor: COLORS.white,
