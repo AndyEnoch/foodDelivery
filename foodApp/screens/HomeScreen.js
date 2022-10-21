@@ -9,13 +9,19 @@ import { RegularText, LightText, ExtraBoldText, MediumText } from '../components
 
 const screenHeight = Dimensions.get("window").height;
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen() {
 
 
 
     return (
         <SafeAreaView style={styles.androidSafeArea}>
-            <Header />
+            <View
+                style={{
+                    flex: 1,
+
+                }}>
+                <Header />
+            </View>
             <View style={styles.screen}>
                 <View  >
                     <MediumText style={{ fontSize: 20 }}>Today's menu</MediumText>
@@ -34,12 +40,13 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
     androidSafeArea: {
         flex: 1,
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         backgroundColor: 'white'
     },
     screen: {
         marginHorizontal: 15,
-        marginTop: 25,
+        marginTop: 20,
+        flex: 3
 
     },
 

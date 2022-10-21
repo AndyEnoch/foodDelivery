@@ -46,13 +46,14 @@ const styles = StyleSheet.create({
     },
     categoryTextSelected: {
         color: COLORS.white,
-        paddingBottom: 5,
+        padding: 5,
         width: '100%',
         height: '100%',
         backgroundColor: COLORS.green,
         borderRadius: 10,
         alignItems: 'center',
         justifyContent: 'center',
+
 
     },
     categoryView: {

@@ -53,8 +53,9 @@ export default function Header() {
 
 const styles = StyleSheet.create({
     container: {
-        height: '25%',
+        height: '100%',
         width: '100%',
+
 
 
     },
@@ -118,7 +119,7 @@ const styles = StyleSheet.create({
     top: {
         flexDirection: 'row',
         justifyContent: 'space-between',
-        margin: 10,
+        padding: 10,
         flex: 2,
         borderRadius: 10
 

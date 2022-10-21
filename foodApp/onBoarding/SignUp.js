@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, KeyboardAvoidingView, SafeAreaView, StyleSheet, TouchableOpacity, Platform, TextInput, StatusBar } from 'react-native'
+import { View, Text, KeyboardAvoidingView, SafeAreaView, StyleSheet, TouchableOpacity, Platform, TextInput, StatusBar, Dimensions } from 'react-native'
 import BoldText, { RegularText } from '../components/Shared/StyledText';
 import SimpleLinesIcons from 'react-native-vector-icons/Feather';
 import COLORS from '../assets/colors/colors';
@@ -9,7 +9,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Button from '../components/Shared/Button';
 import Row from '../components/Shared/Row';
 
-export default function SignUp({ navigation }) {
+export default function SignUp({ navigation }, props) {
 
 
     const [callingCode, setCallingCode] = useState('233');
@@ -58,7 +58,7 @@ export default function SignUp({ navigation }) {
                 //     borderWidth: 1
                 // }}
                 >
-                    <Input
+                    {/* <Input
                         multiline={true}
                         placeholder="Full Name"
                         style={{
@@ -73,30 +73,85 @@ export default function SignUp({ navigation }) {
 
                         }}
 
-                    />
-                    <Input
-                        onBlur={() => setFocus(false)}
-                        onFocus={() => setFocus(true)}
-                        maxLength={9}
-                        keyboardType="number-pad"
+                    /> */}
+
+                    <View
                         style={{
-                            flex: 1,
-                            padding: 10,
-                            fontSize: 17,
-                            fontFamily: 'Rubik-Regular',
-                            shadowColor: "#000",
+                            height: 50,
+                            width: '100%',
+                            alignSelf: 'center',
+                            backgroundColor: 'white',
+                            borderTopWidth: 3,
+                            borderTopColor: '#f5f5f5',
+                            flexDirection: 'row',
+                            marginBottom: 15,
                             shadowOffset: {
                                 width: 0,
-                                height: 2,
+                                height: 4,
                             },
-                            shadowOpacity: 0.12,
-                            shadowRadius: 5,
+                            shadowOpacity: 0.30,
+                            shadowRadius: 4.65,
 
-                        }}
-                        placeholder="+233 54 832 0232"
-                    />
+                            elevation: 8,
 
-                    <Password
+                        }}>
+                        <Ionicons name="person-outline" size={25} color="grey"
+                            style={{
+                                // width: '20%',
+                                alignSelf: 'center',
+                                marginLeft: 10
+                            }} />
+                        <TextInput
+                            style={{
+                                height: '100%',
+                                width: '90%',
+                                fontSize: 15,
+                                marginLeft: 5
+                            }}
+                            placeholder="Full Name"
+                        />
+                    </View>
+                    <View
+                        style={{
+                            height: 50,
+                            width: '100%',
+                            alignSelf: 'center',
+                            backgroundColor: 'white',
+                            borderTopWidth: 3,
+                            borderTopColor: '#f5f5f5',
+                            flexDirection: 'row',
+                            marginBottom: 15,
+                            shadowOffset: {
+                                width: 0,
+                                height: 4,
+                            },
+                            shadowOpacity: 0.30,
+                            shadowRadius: 4.65,
+
+                            elevation: 8,
+
+                        }}>
+                        <Ionicons name="phone-portrait-outline" size={25} color="grey"
+                            style={{
+                                // width: '20%',
+                                alignSelf: 'center',
+                                marginLeft: 10
+                            }} />
+                        <TextInput
+                            style={{
+                                height: '100%',
+                                width: '90%',
+
+                                fontSize: 15,
+                                marginLeft: 5
+                            }}
+                            keyboardType={'number-pad'}
+                            maxLength={14}
+                            placeholder="+233 264 774 091"
+                        />
+                    </View>
+
+                    {/* <Password
                         placeholder="Password"
                         style={{
                             minHeight: 50,
@@ -114,22 +169,102 @@ export default function SignUp({ navigation }) {
                         }}
                         onChangeText={t => setPassword(t)}
 
-                    />
-
-                    <Password
-                        placeholder="Confirm Password"
+                    /> */}
+                    <View
                         style={{
-                            minHeight: 50,
-                            shadowColor: "#000",
+                            height: 50,
+                            width: '100%',
+                            alignSelf: 'center',
+                            backgroundColor: 'white',
+                            borderTopWidth: 3,
+                            borderTopColor: '#f5f5f5',
+                            flexDirection: 'row',
+                            marginBottom: 15,
                             shadowOffset: {
                                 width: 0,
-                                height: 2,
+                                height: 4,
                             },
-                            shadowOpacity: 0.12,
-                            shadowRadius: 5,
+                            shadowOpacity: 0.30,
+                            shadowRadius: 4.65,
 
-                        }}
-                    />
+                            elevation: 8,
+
+                        }}>
+                        <View
+                            style={{
+                                justifyContent: 'center',
+                                marginLeft: 10
+                            }}>
+                            <Ionicons name="lock-closed-outline" size={25} color="grey"
+                                style={{
+                                    alignSelf: 'center',
+
+                                }} />
+                        </View>
+                        <View
+                            style={{
+                                width: '89%',
+                                justifyContent: 'center',
+                                paddingLeft: 5
+                            }}>
+                            <Password
+                                placeholder="Password"
+                                style={{
+                                    borderWidth: 0,
+
+                                }}
+                                onChangeText={t => setPassword(t)}
+                            />
+                        </View>
+                    </View>
+
+                    <View
+                        style={{
+                            height: 50,
+                            width: '100%',
+                            alignSelf: 'center',
+                            backgroundColor: 'white',
+                            borderTopWidth: 3,
+                            borderTopColor: '#f5f5f5',
+                            flexDirection: 'row',
+                            marginBottom: 15,
+                            shadowOffset: {
+                                width: 0,
+                                height: 4,
+                            },
+                            shadowOpacity: 0.30,
+                            shadowRadius: 4.65,
+
+                            elevation: 8,
+
+                        }}>
+                        <View
+                            style={{
+                                justifyContent: 'center',
+                                marginLeft: 10
+                            }}>
+                            <Ionicons name="lock-closed-outline" size={25} color="grey"
+                                style={{
+                                    alignSelf: 'center',
+
+                                }} />
+                        </View>
+                        <View
+                            style={{
+                                width: '89%',
+                                justifyContent: 'center',
+                                paddingLeft: 5
+                            }}>
+                            <Password
+                                placeholder="Confirm Password"
+                                style={{
+                                    borderWidth: 0,
+
+                                }}
+                                onChangeText={t => setPassword(t)}
+                            />
+                        </View>
+                    </View>
 
                     <Button
                         title="Sign Up"
