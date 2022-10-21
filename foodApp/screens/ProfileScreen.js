@@ -9,9 +9,11 @@ import * as Icons from "react-native-heroicons/solid";
 export default function ProfileScreen() {
     return (
         <SafeAreaView style={styles.androidSafeArea}>
+            <StatusBar backgroundColor={COLORS.green} barStyle="dark-content" />
             <View
                 style={{
                     marginHorizontal: 10,
+                    flex: 1
                 }}>
                 <View style={styles.top}>
                     <MediumText style={{
@@ -149,13 +151,13 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
     androidSafeArea: {
         flex: 1,
-        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+        // paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         backgroundColor: 'white'
     },
     top: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
+        flex: 0.8,
+        alignItems: 'center',
+        justifyContent: 'center'
 
     },
     middle: {

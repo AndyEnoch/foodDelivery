@@ -7,6 +7,8 @@ import SignUp from './onBoarding/SignUp';
 import VerificationScreen from './onBoarding/VerificationScreen';
 import HomeScreen from './screens/HomeScreen';
 import OrderScreen from './screens/OrderScreen';
+import ConfirmScreen from './screens/orders/ConfirmScreen';
+import SummaryScreen from './screens/orders/SummaryScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -87,12 +89,26 @@ export default function App() {
     <CartProvider>
 
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home"
+        <Stack.Navigator initialRouteName="Slider"
           screenOptions={{ headerShown: false }}
         >
           <Stack.Screen
             name="Slider"
             component={Slider}
+            options={{
+              title: 'Awesome app',
+            }}
+          />
+          <Stack.Screen
+            name="Confirm"
+            component={ConfirmScreen}
+            options={{
+              title: 'Awesome app',
+            }}
+          />
+          <Stack.Screen
+            name="Summary"
+            component={SummaryScreen}
             options={{
               title: 'Awesome app',
             }}

@@ -1,16 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import { View, Text, StyleSheet, ImageBackground, TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux';
 import COLORS from '../assets/colors/colors';
 import ShoppingCartIcon from './ShoppingCartIcon';
 import { RegularText, LightText, ExtraBoldText, MediumText } from '../components/Shared/StyledText';
+import { CartContext } from '../context/CartContext';
 
 
 
 
 
-export default function CartScreen() {
+export default function CartScreen({ navigation }) {
+
+    const [cart, setCart] = useContext(CartContext);
+    const addToCart = () => {
+        const item = { key: cart.id, image: cart.img, name: cart.topText, description: cart.midText1, description2: cart.midText2, price: cart.price, count: cart.count };
+        setCart(curr => [...curr, item]);
+        console.log(cart)
+
+    }
 
     const image = require('../assets/cart.jpeg')
     return (
@@ -38,7 +47,7 @@ export default function CartScreen() {
                         height: 50,
                         borderRadius: 5
                     }}
-                    >
+                        onPress={() => { addToCart }}>
                         <RegularText
                             style={{
                                 fontSize: 20,

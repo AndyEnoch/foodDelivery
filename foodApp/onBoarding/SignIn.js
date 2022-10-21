@@ -58,43 +58,92 @@ export default function SignIn({ navigation }) {
                 //     borderWidth: 1
                 // }}
                 >
-                    <Input
-                        multiline={true}
-                        placeholder="UserName"
+                    <View
                         style={{
-                            minHeight: 50,
-                            shadowColor: "#000",
+                            height: 50,
+                            width: '100%',
+                            alignSelf: 'center',
+                            backgroundColor: 'white',
+                            borderTopWidth: 3,
+                            borderTopColor: '#f5f5f5',
+                            flexDirection: 'row',
+                            marginBottom: 15,
                             shadowOffset: {
                                 width: 0,
-                                height: 2,
+                                height: 4,
                             },
-                            shadowOpacity: 0.12,
-                            shadowRadius: 5,
-                        }}
+                            shadowOpacity: 0.30,
+                            shadowRadius: 4.65,
+
+                            elevation: 8,
+
+                        }}>
+                        <Ionicons name="person-outline" size={25} color="grey"
+                            style={{
+                                // width: '20%',
+                                alignSelf: 'center',
+                                marginLeft: 10
+                            }} />
+                        <TextInput
+                            style={{
+                                height: '100%',
+                                width: '90%',
+
+                                fontSize: 15,
+                                marginLeft: 5
+                            }}
+                            placeholder="Full Name"
+                        />
+                    </View>
 
 
-                    />
-
-
-                    <Password
-                        placeholder="Password"
+                    <View
                         style={{
-                            minHeight: 50,
-                            flex: 1,
-                            padding: 10,
-                            fontSize: 17,
-                            shadowColor: "#000",
+                            height: 50,
+                            width: '100%',
+                            alignSelf: 'center',
+                            backgroundColor: 'white',
+                            borderTopWidth: 3,
+                            borderTopColor: '#f5f5f5',
+                            flexDirection: 'row',
+                            marginBottom: 15,
                             shadowOffset: {
                                 width: 0,
-                                height: 10,
+                                height: 4,
                             },
-                            shadowOpacity: 0.12,
-                            shadowRadius: 5,
+                            shadowOpacity: 0.30,
+                            shadowRadius: 4.65,
 
-                        }}
-                        onChangeText={t => setPassword(t)}
+                            elevation: 8,
 
-                    />
+                        }}>
+                        <View
+                            style={{
+                                justifyContent: 'center',
+                                marginLeft: 10
+                            }}>
+                            <Ionicons name="lock-closed-outline" size={25} color="grey"
+                                style={{
+                                    alignSelf: 'center',
+
+                                }} />
+                        </View>
+                        <View
+                            style={{
+                                width: '89%',
+                                justifyContent: 'center',
+                                paddingLeft: 5
+                            }}>
+                            <Password
+                                placeholder="Password"
+                                style={{
+                                    borderWidth: 0,
+
+                                }}
+                                onChangeText={t => setPassword(t)}
+                            />
+                        </View>
+                    </View>
                     <Row style={{ justifyContent: 'flex-end' }}>
 
                         <TouchableOpacity

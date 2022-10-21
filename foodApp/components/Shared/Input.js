@@ -57,19 +57,22 @@ export function Password(props) {
   const [showPassword, setShowPassword] = useState(true);
   const [focus, setFocus] = useState(false);
   return (
-    <View style={{ marginTop: 10 }}>
+    <View >
       {props.showLabel ? <BoldText style={{ fontWeight: '400' }}>{props.label}</BoldText> : null}
       <View
         style={[
-          style.main,
           {
+            backgroundColor: '#f2f2f2',
+            borderRadius: 5,
+            borderColor: '#e3e3e3',
             flexDirection: 'row',
             alignItems: 'center',
-            paddingHorizontal: 11,
+            // paddingHorizontal: 11,
             paddingVertical: Platform.OS === 'android' ? 3 : 13,
-            borderWidth: 0.6,
+            // borderWidth: 0.6,
             backgroundColor: "transparent",
             borderColor: focus ? COLORS.green : '#e3e3e3',
+            ...props.style
           },
         ]}>
         <TextInput
@@ -77,7 +80,7 @@ export function Password(props) {
           onBlur={() => setFocus(false)}
           onFocus={() => setFocus(true)}
           {...props}
-          style={[{ flex: 1, fontSize: 16, fontFamily: 'Rubik-Regular' }]}
+          style={[{ flex: 1, fontSize: 16, }]}
         />
         <TouchableOpacity
           onPress={() => {
@@ -97,9 +100,17 @@ export function Password(props) {
 const style = StyleSheet.create({
   main: {
     backgroundColor: '#f2f2f2',
-    // borderWidth: 0.4,
+    borderWidth: 0.4,
     marginTop: 7,
     borderRadius: 5,
     borderColor: '#e3e3e3',
+  },
+  mainpass: {
+    backgroundColor: '#f2f2f2',
+    borderWidth: 0.4,
+    marginTop: 7,
+    borderRadius: 5,
+    borderColor: '#e3e3e3',
+
   },
 });

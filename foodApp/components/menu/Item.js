@@ -19,7 +19,7 @@ export default function Item() {
 
     const list = [
         {
-            id: 1,
+            id: '1',
             topText: 'Chicken Burger',
             midText1: 'Spicy chicken burger ',
             midText2: 'Taste great and beyond',
@@ -29,7 +29,7 @@ export default function Item() {
 
         },
         {
-            id: 2,
+            id: '2',
             topText: 'Pizza',
             midText1: 'Spicy chicken burger ',
             midText2: 'Taste great and beyond',
@@ -39,36 +39,44 @@ export default function Item() {
 
         },
         {
-            id: 3,
+            id: '3',
             topText: 'Variety',
             midText1: 'Spicy chicken burger ',
             midText2: 'Taste great and beyond',
             price: 9.99,
             img: require('../../assets/illustrate.jpg'),
             count: 1
-
         },
         {
-            id: 4,
+            id: '4',
             topText: 'Chicken Burger',
             midText1: 'Spicy chicken burger ',
             midText2: 'Taste great and beyond',
             price: 39.99,
             img: require('../../assets/back2.jpg'),
             count: 1
+        },
+        {
+            id: '5',
+            topText: 'Chicken Burger',
+            midText1: 'Spicy chicken burger ',
+            midText2: 'Taste great and beyond',
+            price: 39.99,
+            img: require('../../assets/bg1.jpg'),
+            count: 1
+        },
+        {
+            id: '6',
+            topText: 'Chicken Burger',
+            midText1: 'Spicy chicken burger ',
+            midText2: 'Taste great and beyond',
+            price: 39.99,
+            img: require('../../assets/bg1.jpg'),
+            count: 1
 
         },
         {
-            id: 5,
-            topText: 'Chicken Burger',
-            midText1: 'Spicy chicken burger ',
-            midText2: 'Taste great and beyond',
-            price: 39.99,
-            img: require('../../assets/bg1.jpg'),
-            count: 1
-
-        }, {
-            id: 6,
+            id: '7',
             topText: 'Chicken Burger',
             midText1: 'Spicy chicken burger ',
             midText2: 'Taste great and beyond',
@@ -78,16 +86,7 @@ export default function Item() {
 
         },
         {
-            id: 7,
-            topText: 'Chicken Burger',
-            midText1: 'Spicy chicken burger ',
-            midText2: 'Taste great and beyond',
-            price: 39.99,
-            img: require('../../assets/bg1.jpg'),
-            count: 1
-
-        }, {
-            id: 8,
+            id: "8",
             topText: 'Chicken Burger',
             midText1: 'Spicy chicken burger ',
             midText2: 'Taste great and beyond',
@@ -148,7 +147,7 @@ export default function Item() {
                 showsVerticalScrollIndicator={false}
                 data={list}
                 renderItem={({ item }) => <Menu list={item} />}
-                style={{ height: screenHeight / 1 }}
+                style={{ height: screenHeight }}
             />
 
         </View >
@@ -159,7 +158,7 @@ const styles = StyleSheet.create({
     main: {
         backgroundColor: COLORS.white,
         width: '95%',
-        paddingRight: '15',
+        // paddingRight: '15',
         borderTopWidth: 3,
         borderTopColor: '#f5f5f5',
         borderRadius: 5,

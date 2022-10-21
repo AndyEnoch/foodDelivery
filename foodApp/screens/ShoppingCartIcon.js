@@ -100,7 +100,7 @@ export default function shoppingCartIcon() {
                                         marginHorizontal: 15
                                     }}
 
-                                >{item.id.count}</RegularText>
+                                >{item.count}</RegularText>
 
                                 <TouchableOpacity onPress={() => item.count++}>
                                     <Text><Icons.PlusIcon style={{ color: COLORS.white, paddingTop: 3 }} size={18} /></Text>
